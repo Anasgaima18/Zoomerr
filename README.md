@@ -116,4 +116,4 @@ Contributions are welcome! Please follow these steps:
 This project is licensed under the **ISC License**.
 
 ---
-*Built with ❤️ by the Zoomerrrrlive Team.*
+*Built with ❤️ & ☕ by Anas Gaima.*
