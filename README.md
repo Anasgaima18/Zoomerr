@@ -5,26 +5,30 @@
 ![Node](https://img.shields.io/badge/backend-Node.js-339933.svg?logo=node.js)
 ![LiveKit](https://img.shields.io/badge/video-LiveKit-F63660.svg)
 
-**Zoomerrrrlive** (also known as Transcripter) is a next-generation video conferencing platform built for the modern era. It combines high-definition video calling with real-time AI transcription, secure authentication, and a futuristic, glassmorphism-inspired user interface.
+**Zoomerrrrlive** (also known as Transcripter) is a next-generation video conferencing platform built for the modern era. It combines high-definition video calling with real-time AI transcription, secure authentication, and a futuristic, **Deep Navy** glassmorphism user interface.
 
 ## 🚀 Key Features
 
 -   **HD Video Calls**: Crystal clear real-time video and audio communication powered by [LiveKit](https://livekit.io/).
--   **Real-time AI Transcription**: Instant speech-to-text processing for meetings, ensuring you never miss a word.
+-   **Smart Transcription Panel**:
+    -   Real-time speech-to-text with speaker diarization.
+    -   **Live Alerts**: Keyword detection for content moderation.
+    -   **AI Summaries**: Instant meeting summaries formatted with Markdown.
 -   **Secure Authentication**: Robust user management using JWT and BCrypt for secure login and registration.
 -   **Interactive Dashboard**: A comprehensive dashboard to manage meetings, view call history, and access team analytics.
--   **Smart Scheduling**: Integrated tools for scheduling upcoming meetings.
--   **Modern UI/UX**: A fully responsive, dark-themed interface featuring glassmorphism effects, smooth animations (Framer Motion), and a premium aesthetic.
+-   **Global Back Navigation**: Seamless navigation across all pages (Settings, History, Login, etc.).
+-   **Modern UI/UX**: A fully responsive, dark-themed interface featuring glassmorphism effects, smooth animations (Framer Motion), and a premium "Deep Navy" aesthetic.
 -   **Team Collaboration**: Tools for chat, breakout rooms, and team status visibility.
 
 ## 🛠️ Tech Stack
 
 ### Frontend
 -   **Framework**: React 19 (Vite)
--   **Styling**: Tailwind CSS, Tailwind Merge
+-   **Styling**: Tailwind CSS, Tailwind Merge, Tailwind Typography
 -   **Animations**: Framer Motion
 -   **Real-time**: Socket.io-client, LiveKit React Components
 -   **Routing**: React Router DOM
+-   **Markdown**: React Markdown, Remark GFM
 -   **Icons**: Lucide React
 -   **State Management**: Context API
 
@@ -34,7 +38,7 @@
 -   **Database**: MongoDB (Mongoose)
 -   **Real-time**: Socket.io, LiveKit Server SDK
 -   **Authentication**: JSON Web Tokens (JWT), BCrypt.js
--   **AI Integration**: OpenRouter / Custom AI endpoints
+-   **AI Integration**: OpenRouter / Google Gemini / ElevenLabs
 
 ## ⚙️ Prerequisites
 
@@ -47,8 +51,8 @@ Before you begin, ensure you have the following installed:
 
 1.  **Clone the Repository**
     ```bash
-    git clone https://github.com/yourusername/zoomerrrrlive.git
-    cd zoomerrrrlive
+    git clone https://github.com/Anasgaima18/Zoomerr.git
+    cd Zoomerr
     ```
 
 2.  **Backend Setup**
