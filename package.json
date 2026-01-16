@@ -4,11 +4,11 @@
     "description": "Root package for Zoomerr MERN Stack Deployment",
     "main": "server/src/index.js",
     "scripts": {
-        "start": "node server/src/index.js",
+        "start": "cd server && npm start",
         "server": "cd server && npm start",
         "client": "cd client && npm run dev",
         "install-all": "npm install && cd client && npm install && cd ../server && npm install",
-        "build": "cd client && npm install && npm run build"
+        "build": "npm install && cd server && npm install && cd ../client && npm install && npm run build"
     },
     "keywords": [],
     "author": "",
