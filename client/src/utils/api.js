@@ -1,7 +1,13 @@
 import axios from 'axios';
 
+const getServerUrl = () => {
+    let url = import.meta.env.VITE_SERVER_URL || 'http://localhost:5000';
+    // Remove trailing slash and /api if present to avoid double api/api
+    return url.replace(/\/$/, '').replace(/\/api$/, '');
+};
+
 const api = axios.create({
-    baseURL: (import.meta.env.VITE_SERVER_URL || 'http://localhost:5000') + '/api',
+    baseURL: `${getServerUrl()}/api`,
 });
 
 // Add token to requests if available

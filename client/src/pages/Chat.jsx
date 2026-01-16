@@ -34,7 +34,11 @@ const Chat = () => {
 
     // Initialize Socket.io
     useEffect(() => {
-        const newSocket = io(import.meta.env.VITE_SERVER_URL || 'http://localhost:5000');
+        let serverUrl = import.meta.env.VITE_SERVER_URL || 'http://localhost:5000';
+        // Sanitize URL: remove trailing slash and /api
+        serverUrl = serverUrl.replace(/\/$/, '').replace(/\/api$/, '');
+
+        const newSocket = io(serverUrl);
         setSocket(newSocket);
 
         return () => newSocket.close();

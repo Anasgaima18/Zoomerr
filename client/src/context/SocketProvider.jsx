@@ -6,7 +6,10 @@ export const SocketProvider = ({ children }) => {
     // Initialize socket in useMemo to avoid side effects in render
     // or use state initialization function
     const socket = useMemo(() => {
-        const serverUrl = import.meta.env.VITE_SERVER_URL || 'http://localhost:5000';
+        let serverUrl = import.meta.env.VITE_SERVER_URL || 'http://localhost:5000';
+        // Sanitize URL: remove trailing slash and /api to ensure connection to root
+        serverUrl = serverUrl.replace(/\/$/, '').replace(/\/api$/, '');
+
         return io(serverUrl, {
             autoConnect: false // Don't connect immediately
         });
