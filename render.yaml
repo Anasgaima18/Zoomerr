@@ -6,7 +6,7 @@ services:
     buildCommand: npm run build
     startCommand: npm start
     envVars:
-      - key: VITE_API_URL
+      - key: VITE_SERVER_URL
         value: "/"
       - key: MONGO_URI
         sync: false
