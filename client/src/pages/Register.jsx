@@ -4,6 +4,7 @@ import { AuthContext } from '../context/AuthContextDefinition';
 import Button from '../components/ui/Button';
 import Input from '../components/ui/Input';
 import BackButton from '../components/ui/BackButton';
+import { Eye, EyeOff } from 'lucide-react';
 
 const Register = () => {
     const navigate = useNavigate();
@@ -17,11 +18,13 @@ const Register = () => {
     });
     const [loading, setLoading] = useState(false);
     const [error, setError] = useState(null);
+    const [showPassword, setShowPassword] = useState(false);
+    const [showConfirmPassword, setShowConfirmPassword] = useState(false);
 
     const { name, email, password, confirmPassword } = formData;
 
     const onChange = (e) =>
-        setFormData({ ...formData, [e.target.name]: e.target.value });
+        setFormData((prev) => ({ ...prev, [e.target.name]: e.target.value }));
 
     const onSubmit = async (e) => {
         e.preventDefault();
@@ -78,21 +81,39 @@ const Register = () => {
                     />
                     <Input
                         label="Password"
-                        type="password"
+                        type={showPassword ? 'text' : 'password'}
                         name="password"
                         value={password}
                         onChange={onChange}
                         required
                         placeholder="••••••••"
+                        rightElement={
+                            <button
+                                type="button"
+                                onClick={() => setShowPassword(!showPassword)}
+                                className="focus:outline-none hover:text-white transition-colors"
+                            >
+                                {showPassword ? <EyeOff size={18} /> : <Eye size={18} />}
+                            </button>
+                        }
                     />
                     <Input
                         label="Confirm Password"
-                        type="password"
+                        type={showConfirmPassword ? 'text' : 'password'}
                         name="confirmPassword"
                         value={confirmPassword}
                         onChange={onChange}
                         required
                         placeholder="••••••••"
+                        rightElement={
+                            <button
+                                type="button"
+                                onClick={() => setShowConfirmPassword(!showConfirmPassword)}
+                                className="focus:outline-none hover:text-white transition-colors"
+                            >
+                                {showConfirmPassword ? <EyeOff size={18} /> : <Eye size={18} />}
+                            </button>
+                        }
                     />
 
                     <Button type="submit" className="mt-2" disabled={loading}>
