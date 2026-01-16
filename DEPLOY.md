@@ -37,11 +37,19 @@ Before pushing to production, verify that the build process works locally.
 3.  **Build Command**: `npm run build`
     *   *Note: This runs the script in the root `package.json` which builds the client.*
 4.  **Start Command**: `npm start`
-5.  Add Environment Variables:
-    *   `MONGO_URI`: Your MongoDB connection string.
-    *   `JWT_SECRET`: Your secret key.
-    *   `LIVEKIT_...`: Your LiveKit credentials.
-    *   `VITE_API_URL`: Set this to `/` so the frontend calls the backend on the same domain.
+5.  **Environment Variables**:
+    You must add the following **8 keys** in the Render Dashboard:
+
+    | Key | Value to Enter |
+    | :--- | :--- |
+    | `MONGO_URI` | Your MongoDB Connection String |
+    | `JWT_SECRET` | Your Secret Key |
+    | `LIVEKIT_URL` | Your LiveKit Project URL (e.g., `wss://...`) |
+    | `LIVEKIT_API_KEY` | Your LiveKit API Key |
+    | `LIVEKIT_API_SECRET` | Your LiveKit API Secret |
+    | `SARVAM_API_KEY` | Your Sarvam AI Key |
+    | `OPENROUTER_API_KEY` | Your OpenRouter Key |
+    | `VITE_SERVER_URL` | `/` (This is crucial: set exactly to a single forward slash) |
 
 ## Troubleshooting
 
